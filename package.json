@@ -1,6 +1,6 @@
 {
   "name": "mergedeps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a simple tool to merge dependencies of 2 packages",
   "scripts": {
     "test": "jest"
