@@ -1,0 +1,26 @@
+{
+  "name": "mergedeps",
+  "version": "1.0.0",
+  "description": "a simple tool to merge dependencies of 2 packages",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "https://github.com/wallaroo/mergedeps.git",
+  "keywords": [
+    "lerna",
+    "dependencies",
+    "copy",
+    "merge"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "bin": {
+    "mergedeps": "index.js"
+  },
+  "author": "wallaroo",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.1.1"
+  }
+}
