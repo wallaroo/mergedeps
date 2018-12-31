@@ -24,8 +24,11 @@ if (src && dest){
     dstPack = require(dstPackPath);
   }else{
     dstPack = Object.assign({}, srcPack);
+    dstPack.name = dstPack.name.replace(/-src$/, "");
+    dstPack.private = false;
+    delete dstPack.devDependencies;
   }
-  dstPack.dependencies = Object.assign(dstPack.dependencies, srcPack.dependencies);
+  dstPack.dependencies = Object.assign(dstPack.dependencies || {}, srcPack.dependencies || {});
   fs.writeFileSync(dstPackPath, JSON.stringify(dstPack, null, " "));
   console.log("copied from " + srcPackPath + " to " + dstPackPath)
 }else{
