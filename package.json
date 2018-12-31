@@ -1,9 +1,12 @@
 {
   "name": "mergedeps",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "a simple tool to merge dependencies of 2 packages",
   "scripts": {
     "test": "jest"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com"
   },
   "repository": "https://github.com/wallaroo/mergedeps.git",
   "keywords": [
