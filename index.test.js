@@ -46,8 +46,27 @@ test("test prj path",(done)=>{
     })
 });
 
+test("test no dest",(done)=>{
+    const process = spawn("node", ["./", "./test/prj2", "./test/prj3"]);
+    process.on("close", (exitcode)=>{
+        expect(exitcode).toBe(0);
+        let pack33 = JSON.parse(fs.readFileSync("./test/prj3/package.json",{encoding:"utf8"}));
+        let pack22 = JSON.parse(fs.readFileSync("./test/prj2/package.json",{encoding:"utf8"}));
+        expect(pack33.dependencies).toMatchObject({
+            "dep2": "^2.0.0",
+            "dep3": "^3.0.0"
+        });
+        expect(pack22.dependencies).toMatchObject({
+            "dep2": "^2.0.0",
+            "dep3": "^3.0.0"
+        });
+        done();
+    })
+});
+
 afterAll(()=>{
     console.log("recover original packages");
     fs.writeFileSync("./test/prj1/package.json", JSON.stringify(pack1, null, " "));
     fs.writeFileSync("./test/prj2/package.json", JSON.stringify(pack2, null, " "));
+    fs.unlinkSync("./test/prj3/package.json")
 });

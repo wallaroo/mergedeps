@@ -1,6 +1,6 @@
 {
   "name": "mergedeps",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "a simple tool to merge dependencies of 2 packages",
   "scripts": {
     "test": "jest"
@@ -21,6 +21,6 @@
   "author": "wallaroo",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^22.1.1"
+    "jest": "23.6.0"
   }
 }
